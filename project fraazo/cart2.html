@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      @media all and (min-width: 80px) and (max-width: 400px) {
+        #container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button><a href="cart.html">Add to cart</a></button>
+    <h1>Cart Page</h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  var mensData = [
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/250/original/data?1621065378",
+      name: "Mango",
+      price: "199",
+      strikedoffprice: "299",
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FCHI13.png",
+      name: "Chikoo ",
+      price: 17,
+      strikedoffprice: 28,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FBAN14.png",
+      name: " Banana",
+      price: 30 ,
+      strikedoffprice: 33,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/261/original/data?1612541635",
+      name: "MEN'S REEBOK SWIM AVENGER FLIP LP SLIPPERS",
+      price: 89,
+      strikedoffprice: 100,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FMOS13.png",
+      name: "Mosambi(sweet Lime)",
+      price: 69,
+      strikedoffprice: 80,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FKIW2.png ",
+      name: " KIwi ",
+      price: 69,
+      strikedoffprice: 84,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/257/original/data?1612448669",
+      name: " Coconut Tender ",
+      price:45 ,
+      strikedoffprice:-- ,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FGRA42.png ",
+      name: "Grapes(Green)  ",
+      price: 60,
+      strikedoffprice: 90,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBRI12.png",
+      name: "Brinjal Barta  ",
+      price: 20,
+      strikedoffprice: 24,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/101/original/data?1612451098 ",
+      name: "Pumkin Green",
+      price: 18,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VLAD12.png ",
+      name: "Ladies Finger/Bhendi",
+      price: 11,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCAP12.png ",
+      name: "Capsicum  ",
+      price: 20,
+      strikedoffprice: 25,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/315/original/data?1614700255",
+      name: "Cucumber",
+      price: 11,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCAB12.png ",
+      name: " Cabbage",
+      price: 15,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCAU12.png ",
+      name: "Cauliflower ",
+      price: 21,
+      strikedoffprice: 25,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBIT12.png ",
+      name: " Bitter Gaurd (Karela) ",
+      price: 34,
+      strikedoffprice: 35,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VPUM12.png",
+      name: "Pumkinr Rd",
+      price: 19,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBOT12.png",
+      name: "Bottle Gaurd(Dudhi) ",
+      price: 19,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/028/original/data?1616765740",
+      name: " Brinjal",
+      price: 15,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        " https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VTON12.png ",
+      name: " Tondali ",
+      price: 10,
+      strikedoffprice: 15,
+    },
+    {
+      image_url:
+        " https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VFRE12.png ",
+      name: "Beens French  ",
+      price: 45,
+      strikedoffprice: 50,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCHA12.png  ",
+      name: "  Beans Chawli ",
+      price: 17,
+      strikedoffprice: 20,
+    },
+    {
+      image_url:
+        " https://content.shop4reebok.com/static/Product-EX4287/reebok_EX4287_1.jpg.plp  ",
+      name: " Beans Flat (papadi)  ",
+      price: 27,
+      strikedoffprice: 30,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCHI22.png  ",
+      name: " Chillies Green  ",
+      price: 17,
+      strikedoffprice: 19,
+    },
+    {
+      image_url:
+        "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VGAR12.png ",
+      name: "Garlic brunch/Lahsun ",
+      price: 10,
+      strikedoffprice: 15,
+    },
+    {
+      image_url:
+        " https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VGIN12.png ",
+      name: "Ginger/Adrak  ",
+      price: 7,
+      strikedoffprice: 10,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/665/original/data?1636699760 ",
+      name: " Tulasi",
+      price: 8,
+      strikedoffprice: 15,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/593/original/data?1635144647",
+      name: " Kismis",
+      price: 59,
+      strikedoffprice: 80,
+    },
+    {
+      image_url:
+        "https://fraazo.com/products/hydroponics/hydroponics/baby-spinach-hydroponics/170",
+      name: "Baby Spinach",
+      price: 70,
+      strikedoffprice: 80,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/631/original/data?1635766646",
+      name: "Mixed Lettuce",
+      price: 100,
+      strikedoffprice: 110,
+    },
+    {
+      image_url:
+        "https://fraazo.com/products/hydroponics/hydroponics/celery-hydroponics/169",
+      name: "Celery",
+      price: 68,
+      strikedoffprice: 80,
+    },
+    {
+      image_url:
+        "https://fraazo.com/products/dry-fruits/dry-fruits-nuts-dried-dates/cashew-tukda-200gms-pack-of-2-100gms/581",
+      name: "Cashew Tukda",
+      price: 167,
+      strikedoffprice: 267,
+    },
+    {
+      image_url:
+        "https://fraazo.com/products/dry-fruits/dry-fruits-nuts-dried-dates/almond-100gms/590",
+      name: "Almond",
+      price: 106,
+      strikedoffprice: 167,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/585/original/data?1635137356",
+      name: "Walnut",
+      price: 175,
+      strikedoffprice: 239,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/588/original/data?1635142184",
+      name: "Pista Kernel ",
+      price: 145,
+      strikedoffprice: 225,
+    },
+    {
+      image_url:
+        "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/586/original/data?1635141850",
+      name: "Pista Salted",
+      price: 120,
+      strikedoffprice: 225,
+    },
+  ];
+
+  var cartData = JSON.parse(localStorage.getItem("cart")) || [];
+  mensData.map(function (elem) {
+    var box = document.createElement("div");
+
+    var img = document.createElement("img");
+    img.src = elem.image_url;
+
+    var name = document.createElement("p");
+    name.textContent = elem.name;
+
+    var price = document.createElement("p");
+    price.innerText = elem.price;
+
+    var btn = document.createElement("button");
+    btn.innerText = "Add to Cart";
+    btn.addEventListener("click", function () {
+      addToCart(elem);
+    });
+
+    box.append(img, name, price, btn);
+
+    document.querySelector("#container").append(box);
+  });
+
+  function addToCart(elem) {
+    console.log(elem);
+    cartData.push(elem);
+    localStorage.setItem("cart", JSON.stringify(cartData));
+    alert("item added to cart");
+  }
+</script>
+
